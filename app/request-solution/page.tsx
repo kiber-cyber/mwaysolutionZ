@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: dict.meta.title,
       description: dict.meta.description,
       url: "https://mwaysolutions.net/request-solution",
-      siteName: "MWAY Solutions",
+      siteName: "MWAYSolutions",
     },
   };
 }
