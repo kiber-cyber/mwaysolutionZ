@@ -5,7 +5,8 @@ import Script from "next/script";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CheckCircle2, AlertCircle, Paperclip } from "lucide-react";
-import { contactSchema, ContactInput } from "@/lib/validation";
+import { contactSchema } from "@/lib/validation";
+import type { z } from "zod";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -29,7 +30,7 @@ export default function ContactForm() {
     reset,
     setValue,
     formState: { errors },
-  } = useForm<ContactInput>({
+  } = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: { locale: "en", website: "", turnstileToken: "" },
   });
@@ -45,7 +46,7 @@ export default function ContactForm() {
     };
   }
 
-  const onSubmit = async (data: ContactInput) => {
+  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
     setStatus("submitting");
     try {
       const formData = new FormData();

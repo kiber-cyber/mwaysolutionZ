@@ -7,8 +7,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import FileUpload from "./FileUpload";
-import { ORG_TYPES, requestSolutionSchema, RequestSolutionInput } from "@/lib/validation";
+import { ORG_TYPES, requestSolutionSchema } from "@/lib/validation";
 import { Locale, dictionaries } from "@/lib/i18n/dictionaries";
+import type { z } from "zod";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -34,7 +35,7 @@ export default function RequestSolutionForm({ locale }: { locale: Locale }) {
     reset,
     setValue,
     formState: { errors },
-  } = useForm<RequestSolutionInput>({
+  } = useForm<z.infer<typeof requestSolutionSchema>>({
     resolver: zodResolver(requestSolutionSchema),
     defaultValues: { locale, orgType: "private", website: "", turnstileToken: "" },
   });
@@ -58,7 +59,7 @@ export default function RequestSolutionForm({ locale }: { locale: Locale }) {
     };
   }
 
-  const onSubmit = async (data: RequestSolutionInput) => {
+  const onSubmit = async (data: z.infer<typeof requestSolutionSchema>) => {
     setStatus("submitting");
     try {
       const formData = new FormData();
