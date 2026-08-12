@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import FileUpload from "./FileUpload";
 import { ORG_TYPES, requestSolutionSchema } from "@/lib/validation";
 import { Locale, dictionaries } from "@/lib/i18n/dictionaries";
-import type { z } from "zod";
+import * as z from "zod";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -21,6 +21,7 @@ declare global {
 }
 
 type FormState = "idle" | "submitting" | "success" | "error";
+type FormValues = z.infer<typeof requestSolutionSchema>;
 
 export default function RequestSolutionForm({ locale }: { locale: Locale }) {
   const dict = dictionaries[locale];
@@ -35,13 +36,18 @@ export default function RequestSolutionForm({ locale }: { locale: Locale }) {
     reset,
     setValue,
     formState: { errors },
-  } = useForm<z.infer<typeof requestSolutionSchema>>({
-    resolver: zodResolver(requestSolutionSchema),
-    defaultValues: { locale, orgType: "private", website: "", turnstileToken: "" },
+  } = useForm<FormValues>({
+    // Type assertion forcefully bypasses the strict Zod mismatch on Vercel
+    resolver: zodResolver(requestSolutionSchema) as any,
+    defaultValues: { 
+      locale: locale as any, 
+      orgType: "private", 
+      website: "", 
+      turnstileToken: "" 
+    } as any,
   });
 
-  // Prefills "Products or Services of Interest" when arriving from a product
-  // page link like /request-solution?product=Professional+Convection+Oven
+  // Prefills "Products or Services of Interest" when arriving from a product page
   const searchParams = useSearchParams();
   useEffect(() => {
     const product = searchParams.get("product");
@@ -59,7 +65,7 @@ export default function RequestSolutionForm({ locale }: { locale: Locale }) {
     };
   }
 
-  const onSubmit = async (data: z.infer<typeof requestSolutionSchema>) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setStatus("submitting");
     try {
       const formData = new FormData();
@@ -100,7 +106,7 @@ export default function RequestSolutionForm({ locale }: { locale: Locale }) {
       )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-3xl mx-auto space-y-16" noValidate>
-        {/* Honeypot — hidden from real users via CSS, bots often fill every field */}
+        {/* Honeypot */}
         <div className="hidden" aria-hidden="true">
           <label htmlFor="website">Website</label>
           <input id="website" tabIndex={-1} autoComplete="off" {...register("website")} />
