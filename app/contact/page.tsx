@@ -1,4 +1,5 @@
 // app/contact/page.tsx
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { getLocale } from "@/lib/i18n/server";
 import { dictionaries } from "@/lib/i18n/dictionaries";
@@ -23,7 +24,7 @@ export default async function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#F6F5F1] text-[#1A1D22] font-sans">
-      <Navbar />
+      <Navbar locale={locale} />
 
       <section className="bg-[#0E1B2B] text-white">
         <div className="max-w-3xl mx-auto px-6 lg:px-10 py-20 text-center">
@@ -38,18 +39,15 @@ export default async function ContactPage() {
           </h1>
           <p
             className="text-white/65 leading-relaxed max-w-xl mx-auto"
-            dangerouslySetInnerHTML={{
-              __html: dict.contact.page.intro.replace(
-                "Request a Solution",
-                `<a href="/request-solution" class="text-[#C08A3E] font-semibold underline underline-offset-2">Request a Solution</a>`
-              ),
-            }}
+            dangerouslySetInnerHTML={{ __html: dict.contact.page.intro }}
           />
         </div>
       </section>
 
       <div className="px-6 lg:px-10 py-20">
-        <ContactForm locale={locale} dict={dict.contact} />
+        <Suspense fallback={<div className="text-center py-10">Loading form...</div>}>
+          <ContactForm locale={locale} dict={dict.contact} />
+        </Suspense>
       </div>
 
       <Footer />

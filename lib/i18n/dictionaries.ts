@@ -1,11 +1,4 @@
-/**
- * i18n dictionaries — English / Georgian.
- *
- * NOTE: Georgian strings below are a first-pass draft translation of
- * standard B2B/procurement terminology. Have a native Georgian speaker
- * (ideally someone familiar with Georgian procurement/tender language)
- * review before production launch — this file is the single place to edit.
- */
+// lib/i18n/dictionaries.ts
 
 export type Locale = "en" | "ka";
 export const LOCALES: Locale[] = ["en", "ka"];
@@ -105,6 +98,45 @@ export const dictionaries = {
       invalidEmail: "Enter a valid email address.",
       tooShort: "Please provide a bit more detail.",
     },
+    // ---------- NEW: contact section ----------
+    contact: {
+      meta: {
+        title: "Contact | MWAY Solutions",
+        description: "Get in touch with MWAY Solutions for your equipment, project, or procurement needs.",
+      },
+      page: {
+        eyebrow: "CONTACT",
+        heading: "Get in Touch",
+        intro:
+          'Questions about a product, a project, or anything else — send us a message and we\'ll get back to you. For a specific project or procurement requirement, use <a href="/request-solution" class="text-[#C08A3E] font-semibold underline underline-offset-2">Request a Solution</a> instead — it captures the detail our team needs to respond properly.',
+      },
+      form: {
+        name: "Name",
+        company: "Company",
+        email: "Email",
+        phone: "Phone",
+        subject: "Subject",
+        message: "Message",
+        attachment: "Attach a file (optional)",
+        submit: "Send Message",
+        submitting: "Sending...",
+        successTitle: "Thank you.",
+        successBody: "Your message has been received. Our team will get back to you shortly.",
+        errorBody: "Your message could not be sent. Please try again, or email us directly at info@mwaysolutions.net.",
+      },
+      validation: {
+        nameRequired: "This field is required.",
+        invalidEmail: "Enter a valid email address.",
+        messageRequired: "Please provide a bit more detail.",
+      },
+      subjects: [
+        { value: "general", label: "General Inquiry" },
+        { value: "sales", label: "Sales & Products" },
+        { value: "support", label: "Technical Support" },
+        { value: "partnership", label: "Partnership" },
+        { value: "other", label: "Other" },
+      ],
+    },
   },
   ka: {
     meta: {
@@ -199,6 +231,45 @@ export const dictionaries = {
       required: "ეს ველი სავალდებულოა.",
       invalidEmail: "შეიყვანეთ სწორი ელ. ფოსტის მისამართი.",
       tooShort: "გთხოვთ, მიუთითოთ მეტი დეტალი.",
+    },
+    // ---------- NEW: contact section (Georgian) ----------
+    contact: {
+      meta: {
+        title: "კონტაქტი | MWAY Solutions",
+        description: "დაგვიკავშირდით აღჭურვილობის, პროექტის ან შესყიდვის საკითხებში.",
+      },
+      page: {
+        eyebrow: "კონტაქტი",
+        heading: "დაგვიკავშირდით",
+        intro:
+          'გაქვთ შეკითხვა პროდუქტზე, პროექტზე ან სხვა საკითხზე? გამოგვიგზავნეთ შეტყობინება და ჩვენ მალე ვუპასუხებთ. კონკრეტული პროექტის ან შესყიდვის მოთხოვნისთვის გამოიყენეთ <a href="/request-solution" class="text-[#C08A3E] font-semibold underline underline-offset-2">მოთხოვნის გაგზავნა</a> – ის შეიცავს ყველა საჭირო დეტალს, რომ ჩვენმა გუნდმა სწორად უპასუხოს.',
+      },
+      form: {
+        name: "სახელი",
+        company: "კომპანია",
+        email: "ელ. ფოსტა",
+        phone: "ტელეფონი",
+        subject: "თემა",
+        message: "შეტყობინება",
+        attachment: "ფაილის დამაგრება (არასავალდებულო)",
+        submit: "შეტყობინების გაგზავნა",
+        submitting: "იგზავნება...",
+        successTitle: "გმადლობთ.",
+        successBody: "თქვენი შეტყობინება მიღებულია. ჩვენი გუნდი მალე დაგიკავშირდებათ.",
+        errorBody: "შეტყობინების გაგზავნა ვერ მოხერხდა. სცადეთ ხელახლა, ან მოგვწერეთ პირდაპირ: info@mwaysolutions.net",
+      },
+      validation: {
+        nameRequired: "ეს ველი სავალდებულოა.",
+        invalidEmail: "შეიყვანეთ სწორი ელ. ფოსტის მისამართი.",
+        messageRequired: "გთხოვთ, მიუთითოთ მეტი დეტალი.",
+      },
+      subjects: [
+        { value: "general", label: "ზოგადი შეკითხვა" },
+        { value: "sales", label: "გაყიდვები და პროდუქტები" },
+        { value: "support", label: "ტექნიკური მხარდაჭერა" },
+        { value: "partnership", label: "პარტნიორობა" },
+        { value: "other", label: "სხვა" },
+      ],
     },
   },
 } as const;
