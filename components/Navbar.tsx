@@ -1,20 +1,36 @@
 // components/Navbar.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV } from "@/lib/nav";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { usePathname } from "next/navigation";
-import { Locale } from "@/lib/i18n/dictionaries";
+import { LOCALE_COOKIE, LOCALES, Locale } from "@/lib/i18n/config";
 
-interface NavbarProps {
-  locale: Locale;
+function useLocale(): Locale {
+  const [locale, setLocale] = useState<Locale>("en");
+
+  useEffect(() => {
+    const cookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith(`${LOCALE_COOKIE}=`));
+    const value = cookie ? cookie.split("=")[1] : "en";
+    // Ensure it's a valid locale
+    if (LOCALES.includes(value as Locale)) {
+      setLocale(value as Locale);
+    } else {
+      setLocale("en");
+    }
+  }, []);
+
+  return locale;
 }
 
-export default function Navbar({ locale }: NavbarProps) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const locale = useLocale();
 
   return (
     <header className="sticky top-0 z-50 bg-[#F6F5F1]/95 backdrop-blur border-b border-[#1A1D22]/10">
