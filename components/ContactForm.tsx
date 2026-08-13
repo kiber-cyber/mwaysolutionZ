@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-// import { Turnstile } from '@marsidev/react-turnstile'; // Uncomment if using Turnstile
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface ContactFormProps {
   locale: string;
@@ -14,9 +14,9 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
   const [subject, setSubject] = useState("general");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   useEffect(() => {
-    // Pre-fill subject from URL (e.g., /contact?subject=sales)
     const querySubject = searchParams.get("subject");
     if (querySubject) {
       const validSubjects = dict.subjects.map((s: any) => s.value);
@@ -31,9 +31,10 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
     setIsSubmitting(true);
     setStatus("idle");
     
-    // Example fetch to your API route
     try {
       const formData = new FormData(e.currentTarget);
+      formData.append("turnstileToken", turnstileToken);
+      formData.append("locale", locale);
       const res = await fetch("/api/contact", {
         method: "POST",
         body: formData,
@@ -56,6 +57,8 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
       </div>
     );
   }
+
+  const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 bg-white p-8 rounded-xl shadow-sm border border-gray-100">
@@ -105,7 +108,14 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
         <p className="text-red-600 text-sm">{dict.form.errorBody}</p>
       )}
 
-      {/* <Turnstile siteKey="YOUR_SITE_KEY" /> */}
+      {TURNSTILE_SITE_KEY && (
+        <Turnstile
+          siteKey={TURNSTILE_SITE_KEY}
+          onSuccess={(token) => setTurnstileToken(token)}
+          onExpire={() => setTurnstileToken("")}
+          onError={() => setTurnstileToken("")}
+        />
+      )}
 
       <button 
         type="submit" 

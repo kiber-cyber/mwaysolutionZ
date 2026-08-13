@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getLocale } from "@/lib/i18n/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -24,10 +25,30 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale(); // used only for <html lang>
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MWAY Solutions",
+    "url": "https://mwaysolutions.net",
+    "logo": "https://mwaysolutions.net/logo.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@mwaysolutions.net",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
-        <Navbar />   {/* NO prop */}
+        {/* JSON-LD for SEO */}
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="afterInteractive"
+        />
+        
+        <Navbar />
         {children}
         <Footer />
         <Analytics />
