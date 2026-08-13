@@ -20,17 +20,25 @@ export const metadata: Metadata = {
   description:
     "MWAY Solutions provides professional equipment, products, technical services and complete project solutions for businesses, institutions and organizations.",
   metadataBase: new URL("https://mwaysolutions.net"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-kit/mway-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-kit/mway-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/favicon-kit/apple-touch-icon.png",
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = await getLocale(); // used only for <html lang>
+  const locale = await getLocale();
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MWAY Solutions",
     "url": "https://mwaysolutions.net",
-    "logo": "https://mwaysolutions.net/logo.svg",
+    "logo": "https://mwaysolutions.net/mway-logo-full.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@mwaysolutions.net",
@@ -41,13 +49,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
-        {/* JSON-LD for SEO */}
         <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           strategy="afterInteractive"
         />
-        
         <Navbar />
         {children}
         <Footer />
