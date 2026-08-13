@@ -1,4 +1,4 @@
-import { getLocale } from "@/lib/i18n/server";
+// app/page.tsx
 import {
   Package,
   Ruler,
@@ -10,14 +10,6 @@ import {
   ShieldCheck,
   Building2,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
-/**
- * MWAY SOLUTIONS — Homepage
- * B2B & institutional solutions company (NOT ecommerce — no cart/checkout/pricing).
- * Palette: Navy #0E1B2B · Charcoal #1A1D22 · Paper #F6F5F1 · Steel #3E6B8A · Brass #C08A3E
- */
 
 const CAPABILITIES = [
   { icon: Package, title: "Supply", desc: "Professional equipment and products sourced according to project and operational requirements.", ref: "CAP-01" },
@@ -42,8 +34,6 @@ const PRODUCTS = [
 export default function Homepage() {
   return (
     <div className="min-h-screen bg-[#F6F5F1] text-[#1A1D22] font-sans selection:bg-[#C08A3E] selection:text-white">
-      <Navbar />
-
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#0E1B2B] text-white">
         <div className="absolute inset-0 grid-lines" />
@@ -204,8 +194,6 @@ export default function Homepage() {
           Submit Your Requirement <ArrowRight size={16} />
         </a>
       </section>
-
-      <Footer />
     </div>
   );
 }

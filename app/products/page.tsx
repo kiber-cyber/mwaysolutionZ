@@ -1,7 +1,6 @@
+// app/products/page.tsx
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { CATEGORIES } from "@/data/categories";
 import { PRODUCTS } from "@/data/products";
 
@@ -15,9 +14,6 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-[#F6F5F1] text-[#1A1D22] font-sans">
-      <Navbar />
-
-      {/* HERO */}
       <section className="relative overflow-hidden bg-[#0E1B2B] text-white">
         <div className="absolute inset-0 grid-lines" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-16">
@@ -33,7 +29,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CATEGORIES */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
         <h2 className="font-display text-2xl font-semibold mb-8">Browse by Category</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1A1D22]/10 border border-[#1A1D22]/10">
@@ -46,7 +41,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* SHOWCASE */}
       <section className="bg-white border-y border-[#1A1D22]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
           <h2 className="font-display text-2xl font-semibold mb-2">Selected Products</h2>
@@ -84,7 +78,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-24 text-center">
         <h2 className="font-display text-2xl lg:text-3xl font-semibold mb-4">
           Don&apos;t see what you need?
@@ -100,8 +93,6 @@ export default function ProductsPage() {
           Request a Solution <ArrowRight size={16} />
         </a>
       </section>
-
-      <Footer />
     </div>
   );
 }

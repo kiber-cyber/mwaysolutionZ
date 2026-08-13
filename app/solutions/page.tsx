@@ -1,7 +1,6 @@
+// app/solutions/page.tsx
 import type { Metadata } from "next";
 import { ArrowRight, Package, Ruler, Truck, LifeBuoy, ClipboardList, Settings2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Solutions",
@@ -55,8 +54,6 @@ const SOLUTION_AREAS = [
 export default function SolutionsPage() {
   return (
     <div className="min-h-screen bg-[#F6F5F1] text-[#1A1D22] font-sans">
-      <Navbar />
-
       <section className="relative overflow-hidden bg-[#0E1B2B] text-white">
         <div className="absolute inset-0 grid-lines" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-16">
@@ -72,7 +69,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* CAPABILITIES */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
         <h2 className="font-display text-2xl font-semibold mb-10">What We Do</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1A1D22]/10 border border-[#1A1D22]/10">
@@ -86,7 +82,6 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* SOLUTION AREAS */}
       <section className="bg-white border-y border-[#1A1D22]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
           <h2 className="font-display text-2xl font-semibold mb-10">Solution Areas</h2>
@@ -130,8 +125,6 @@ export default function SolutionsPage() {
           Request a Solution <ArrowRight size={16} />
         </a>
       </section>
-
-      <Footer />
     </div>
   );
 }
