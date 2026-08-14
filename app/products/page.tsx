@@ -71,7 +71,7 @@ export default async function ProductsPage() {
                     <h3 className="font-display text-base font-semibold mb-2">{p.name}</h3>
                     <p className="text-sm text-navy/60 leading-relaxed mb-5 flex-1">{p.description}</p>
                     <a
-                      href={`/request-solution?product=${encodeURIComponent(p.name)}`}
+                      href={`/contact?subject=${encodeURIComponent("Product Inquiry: " + p.name)}`}
                       className="text-xs font-semibold bg-bronze hover:bg-bronze/80 text-white text-center py-2.5 transition-colors"
                     >
                       Request Information
@@ -92,7 +92,7 @@ export default async function ProductsPage() {
           {products.cta.subtitle}
         </p>
         <a
-          href="/request-solution"
+          href="/contact"
           className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze/80 text-white font-semibold px-8 py-4 rounded-sm transition-colors"
         >
           {products.cta.button} <ArrowRight size={16} />

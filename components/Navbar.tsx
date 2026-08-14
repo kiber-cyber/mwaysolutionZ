@@ -69,11 +69,11 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-5">
           <LanguageSwitcher currentLocale={locale} />
           <a
-            href="/request-solution"
-            className="bg-bronze hover:bg-bronze/80 text-white text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors"
-          >
-            Request a Solution
-          </a>
+  href="/contact"
+  className="bg-bronze hover:bg-bronze/80 text-white text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors"
+>
+  Contact Us
+</a>
         </div>
 
         <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
@@ -89,11 +89,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/request-solution"
-            className="bg-bronze text-white text-sm font-semibold px-5 py-3 rounded-sm text-center mt-2"
-          >
-            Request a Solution
-          </a>
+  href="/contact"
+  className="bg-bronze hover:bg-bronze/80 text-white text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors"
+>
+  Contact Us
+</a>
         </div>
       )}
     </header>
