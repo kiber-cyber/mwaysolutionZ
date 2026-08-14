@@ -223,12 +223,83 @@ One requirement. Multiple possibilities. One coordinated solution.`,
         intro: "From equipment supply and procurement to installation, commissioning and ongoing technical support, we help organizations turn requirements into practical, reliable solutions.",
       },
       capabilities: "What We Do",
+      capabilitiesList: [
+        { title: "Supply", desc: "Professional equipment and products sourced according to project and operational requirements." },
+        { title: "Design & Build", desc: "Custom solutions designed around the customer's facility, workflow and technical requirements." },
+        { title: "Installation", desc: "Delivery, installation, configuration and commissioning." },
+        { title: "Service & Maintenance", desc: "Technical support, spare parts, maintenance and after-sales service." },
+        { title: "Procurement", desc: "Sourcing and procurement support for commercial and institutional requirements." },
+        { title: "Custom Solutions", desc: "Tailored products, equipment and technical solutions for specific operational needs." },
+      ],
       areas: "Solution Areas",
+      areasList: [
+        {
+          title: "Hospitality & Food Service",
+          desc: "Equipment and solutions for restaurants, cafés, hotels and catering operations.",
+          items: [
+            "Commercial kitchen equipment supply",
+            "Kitchen design and layout support",
+            "Installation and commissioning",
+            "Ongoing maintenance and spare parts",
+          ],
+        },
+        {
+          title: "Institutional & Facility Solutions",
+          desc: "Equipment and project support for schools, healthcare facilities and other institutions.",
+          items: [
+            "Institutional kitchen and facility equipment",
+            "Technical documentation and specifications",
+            "Phased or project-based delivery",
+            "Long-term maintenance agreements",
+          ],
+        },
+        {
+          title: "Custom Project Solutions",
+          desc: "Where standard equipment doesn't fit, we scope and source to the specific requirement.",
+          items: [
+            "Requirement scoping and sourcing",
+            "Custom manufacturing coordination",
+            "Multi-vendor project management",
+            "Technical support through delivery",
+          ],
+        },
+      ],
       cta: {
         title: "Have a Requirement?",
         subtitle: "Tell us what you need. Our team will review your requirements and help identify the right solution.",
         button: "Request a Solution",
       },
+    },
+    terms: {
+      meta: {
+        title: "Terms of Service | MWAY Solutions",
+        description: "Terms and conditions for using MWAY Solutions services.",
+      },
+      content: `Last updated: August 2026
+
+1. Acceptance of Terms
+By using this website, you agree to these terms. If you do not agree, please do not use the site.
+
+2. Information Provided
+All content on this website is for informational purposes only. Product descriptions, specifications, and availability are subject to change without notice.
+
+3. No Online Transactions
+This website is not an e-commerce platform. No purchases can be made online. All product inquiries and orders are handled via email or phone.
+
+4. Intellectual Property
+All content, including text, graphics, logos, and images, is the property of MWAY Solutions and is protected by applicable copyright and trademark laws.
+
+5. External Links
+This website may contain links to third-party sites. We are not responsible for their content or privacy practices.
+
+6. Disclaimer
+MWAY Solutions provides information "as is" without warranties of any kind. We strive for accuracy but do not guarantee that all information is current or error-free.
+
+7. Governing Law
+These terms are governed by the laws of Georgia.
+
+8. Contact
+If you have questions, please contact us at info@mwaysolutions.net.`,
     },
   },
   ka: {
@@ -452,12 +523,83 @@ One requirement. Multiple possibilities. One coordinated solution.`,
         intro: "აღჭურვილობის მიწოდებიდან და შესყიდვებიდან დაწყებული, ინსტალაციის, კომისირებისა და მიმდინარე ტექნიკური მხარდაჭერის ჩათვლით — ვეხმარებით ორგანიზაციებს, მოთხოვნები პრაქტიკულ, საიმედო გადაწყვეტილებებად აქციონ.",
       },
       capabilities: "რას ვაკეთებთ",
+      capabilitiesList: [
+        { title: "მიწოდება", desc: "პროფესიული აღჭურვილობა და პროდუქტები, რომლებიც შეესაბამება პროექტისა და ოპერაციულ მოთხოვნებს." },
+        { title: "დიზაინი და მშენებლობა", desc: "ინდივიდუალური გადაწყვეტილებები, რომლებიც შექმნილია კლიენტის ობიექტის, სამუშაო პროცესისა და ტექნიკური მოთხოვნების გათვალისწინებით." },
+        { title: "ინსტალაცია", desc: "მიწოდება, ინსტალაცია, კონფიგურაცია და კომისირება." },
+        { title: "მომსახურება და ტექნიკური მხარდაჭერა", desc: "ტექნიკური მხარდაჭერა, სათადარიგო ნაწილები, ტექნიკური მომსახურება და გაყიდვების შემდგომი მომსახურება." },
+        { title: "შესყიდვები", desc: "შესყიდვების მხარდაჭერა კომერციული და ინსტიტუციური მოთხოვნებისთვის." },
+        { title: "ინდივიდუალური გადაწყვეტილებები", desc: "პროდუქტები, აღჭურვილობა და ტექნიკური გადაწყვეტილებები სპეციფიკური საოპერაციო საჭიროებებისთვის." },
+      ],
       areas: "გადაწყვეტილებების სფეროები",
+      areasList: [
+        {
+          title: "სასტუმრო და კვების სერვისი",
+          desc: "აღჭურვილობა და გადაწყვეტილებები რესტორნების, კაფეების, სასტუმროების და კვების ობიექტებისთვის.",
+          items: [
+            "კომერციული სამზარეულოს აღჭურვილობის მიწოდება",
+            "სამზარეულოს დიზაინის და განლაგების მხარდაჭერა",
+            "ინსტალაცია და კომისირება",
+            "მიმდინარე ტექნიკური მომსახურება და სათადარიგო ნაწილები",
+          ],
+        },
+        {
+          title: "ინსტიტუციური და ობიექტის გადაწყვეტილებები",
+          desc: "აღჭურვილობა და პროექტის მხარდაჭერა სკოლების, ჯანდაცვის დაწესებულებების და სხვა ინსტიტუტებისთვის.",
+          items: [
+            "ინსტიტუციური სამზარეულოს და ობიექტის აღჭურვილობა",
+            "ტექნიკური დოკუმენტაცია და სპეციფიკაციები",
+            "ფაზური ან პროექტზე დაფუძნებული მიწოდება",
+            "გრძელვადიანი ტექნიკური მომსახურების ხელშეკრულებები",
+          ],
+        },
+        {
+          title: "ინდივიდუალური პროექტის გადაწყვეტილებები",
+          desc: "როდესაც სტანდარტული აღჭურვილობა არ ერგება, ჩვენ ვგეგმავთ და ვპოულობთ სპეციფიკურ მოთხოვნას.",
+          items: [
+            "მოთხოვნის განსაზღვრა და წყაროების მოძიება",
+            "ინდივიდუალური წარმოების კოორდინაცია",
+            "მრავალ მომწოდებლიანი პროექტების მართვა",
+            "ტექნიკური მხარდაჭერა მიწოდების პროცესში",
+          ],
+        },
+      ],
       cta: {
         title: "გაქვთ მოთხოვნა?",
         subtitle: "გვითხარით რა გჭირდებათ. ჩვენი გუნდი განიხილავს მოთხოვნას და დაგიკავშირდებათ.",
         button: "მოთხოვნის გაგზავნა",
       },
+    },
+    terms: {
+      meta: {
+        title: "მომსახურების პირობები | MWAY Solutions",
+        description: "MWAY Solutions-ის მომსახურების პირობები.",
+      },
+      content: `ბოლოს განახლდა: აგვისტო 2026
+
+1. პირობების მიღება
+ამ ვებსაიტის გამოყენებით, თქვენ ეთანხმებით ამ პირობებს. თუ არ ეთანხმებით, გთხოვთ, არ გამოიყენოთ საიტი.
+
+2. ინფორმაცია
+ამ ვებსაიტზე განთავსებული ყველა ინფორმაცია მხოლოდ საინფორმაციო მიზნებისთვისაა. პროდუქტების აღწერილობები, სპეციფიკაციები და ხელმისაწვდომობა შეიძლება შეიცვალოს გაფრთხილების გარეშე.
+
+3. ონლაინ ტრანზაქციების არარსებობა
+ეს ვებსაიტი არ არის ელექტრონული კომერციის პლატფორმა. ონლაინ შესყიდვები შეუძლებელია. ყველა პროდუქტის მოთხოვნა და შეკვეთა ხორციელდება ელ. ფოსტით ან ტელეფონით.
+
+4. ინტელექტუალური საკუთრება
+ყველა კონტენტი, მათ შორის ტექსტი, გრაფიკა, ლოგოები და სურათები, არის MWAY Solutions-ის საკუთრება და დაცულია საავტორო უფლებებისა და სავაჭრო ნიშნების კანონმდებლობით.
+
+5. გარე ბმულები
+ეს ვებსაიტი შეიძლება შეიცავდეს ბმულებს მესამე მხარის საიტებზე. ჩვენ არ ვართ პასუხისმგებელი მათ შინაარსსა ან კონფიდენციალურობის პრაქტიკაზე.
+
+6. უარი პასუხისმგებლობაზე
+MWAY Solutions გთავაზობთ ინფორმაციას "როგორც არის" ყოველგვარი გარანტიის გარეშე. ჩვენ ვცდილობთ სიზუსტისკენ, მაგრამ არ ვიძლევით გარანტიას, რომ ყველა ინფორმაცია მიმდინარე ან შეცდომებისგან თავისუფალია.
+
+7. მოქმედი კანონმდებლობა
+ეს პირობები რეგულირდება საქართველოს კანონმდებლობით.
+
+8. კონტაქტი
+თუ გაქვთ შეკითხვები, გთხოვთ, დაგვიკავშირდეთ info@mwaysolutions.net-ზე.`,
     },
   },
 } as const;

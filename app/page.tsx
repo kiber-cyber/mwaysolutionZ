@@ -57,10 +57,10 @@ export default function Homepage() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="/request-solution"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze/80 text-white font-semibold px-6 py-3.5 rounded-sm transition-colors"
             >
-              Request a Solution <ArrowRight size={16} />
+              Contact Us <ArrowRight size={16} />
             </a>
             <a
               href="/solutions"

@@ -57,7 +57,7 @@ export default async function AboutPage() {
           {about.cta.subtitle}
         </p>
         <a
-          href="/request-solution"
+          href="/contact"
           className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze/80 text-white font-semibold px-8 py-4 rounded-sm transition-colors"
         >
           {about.cta.button} <ArrowRight size={16} />

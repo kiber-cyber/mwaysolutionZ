@@ -1,5 +1,4 @@
-/** Shared primary navigation — only pages that actually exist. Add
- * Industries / Projects here once those pages are built. */
+// lib/nav.ts
 export const NAV = [
   { label: "Solutions", href: "/solutions" },
   { label: "Products", href: "/products" },
