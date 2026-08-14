@@ -1,14 +1,18 @@
+// app/solutions/page.tsx
 import type { Metadata } from "next";
 import { ArrowRight, Package, Ruler, Truck, LifeBuoy, ClipboardList, Settings2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { getLocale } from "@/lib/i18n/server";
+import { dictionaries } from "@/lib/i18n/dictionaries";
 
-export const metadata: Metadata = {
-  title: "Solutions",
-  description:
-    "Equipment supply, custom design, installation, procurement and maintenance solutions from MWAY Solutions.",
-  alternates: { canonical: "https://mwaysolutions.net/solutions" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const dict = dictionaries[locale];
+  return {
+    title: dict.solutions.meta.title,
+    description: dict.solutions.meta.description,
+    alternates: { canonical: "https://mwaysolutions.net/solutions" },
+  };
+}
 
 const CAPABILITIES = [
   { icon: Package, title: "Supply", desc: "Professional equipment and products sourced according to project and operational requirements." },
@@ -52,60 +56,60 @@ const SOLUTION_AREAS = [
   },
 ];
 
-export default function SolutionsPage() {
-  return (
-    <div className="min-h-screen bg-[#F6F5F1] text-[#1A1D22] font-sans">
-      <Navbar />
+export default async function SolutionsPage() {
+  const locale = await getLocale();
+  const dict = dictionaries[locale];
+  const solutions = dict.solutions;
 
-      <section className="relative overflow-hidden bg-[#0E1B2B] text-white">
+  return (
+    <div className="min-h-screen bg-paper text-navy font-sans">
+      <section className="relative overflow-hidden bg-navy text-white">
         <div className="absolute inset-0 grid-lines" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-16">
-          <div className="text-xs font-medium tracking-widest text-[#3E6B8A] mb-4">SOLUTIONS</div>
+          <div className="text-xs font-medium tracking-widest text-bronze mb-4">
+            {solutions.hero.eyebrow}
+          </div>
           <h1 className="font-display text-4xl lg:text-5xl font-bold max-w-2xl leading-tight">
-            Solutions That Move Projects Forward
+            {solutions.hero.heading}
           </h1>
           <p className="mt-5 text-white/70 max-w-xl leading-relaxed">
-            From equipment supply and procurement to installation, commissioning and ongoing
-            technical support, we help organizations turn requirements into practical,
-            reliable solutions.
+            {solutions.hero.intro}
           </p>
         </div>
       </section>
 
-      {/* CAPABILITIES */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-        <h2 className="font-display text-2xl font-semibold mb-10">What We Do</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1A1D22]/10 border border-[#1A1D22]/10">
+        <h2 className="font-display text-2xl font-semibold mb-10">{solutions.capabilities}</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy/10 border border-navy/10">
           {CAPABILITIES.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="bg-white p-8">
-              <Icon size={24} strokeWidth={1.5} className="text-[#3E6B8A] mb-5" />
+              <Icon size={24} strokeWidth={1.5} className="text-bronze mb-5" />
               <h3 className="font-display text-base font-semibold mb-2">{title}</h3>
-              <p className="text-sm text-[#1A1D22]/65 leading-relaxed">{desc}</p>
+              <p className="text-sm text-navy/65 leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SOLUTION AREAS */}
-      <section className="bg-white border-y border-[#1A1D22]/10">
+      <section className="bg-white border-y border-navy/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-          <h2 className="font-display text-2xl font-semibold mb-10">Solution Areas</h2>
+          <h2 className="font-display text-2xl font-semibold mb-10">{solutions.areas}</h2>
           <div className="grid lg:grid-cols-3 gap-8">
             {SOLUTION_AREAS.map((area) => (
-              <div key={area.title} className="border border-[#1A1D22]/12 p-8 flex flex-col">
+              <div key={area.title} className="border border-navy/12 p-8 flex flex-col">
                 <h3 className="font-display text-lg font-semibold mb-3">{area.title}</h3>
-                <p className="text-sm text-[#1A1D22]/60 leading-relaxed mb-6">{area.desc}</p>
-                <ul className="text-sm text-[#1A1D22]/70 space-y-2 mb-8 flex-1">
+                <p className="text-sm text-navy/60 leading-relaxed mb-6">{area.desc}</p>
+                <ul className="text-sm text-navy/70 space-y-2 mb-8 flex-1">
                   {area.items.map((item) => (
                     <li key={item} className="flex gap-2">
-                      <span className="text-[#C08A3E]">—</span>
+                      <span className="text-bronze">—</span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
                 <a
                   href="/request-solution"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#0E1B2B]"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-navy"
                 >
                   Submit a Requirement <ArrowRight size={14} />
                 </a>
@@ -117,21 +121,18 @@ export default function SolutionsPage() {
 
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-24 text-center">
         <h2 className="font-display text-2xl lg:text-3xl font-semibold mb-4">
-          Have a Requirement?
+          {solutions.cta.title}
         </h2>
-        <p className="text-[#1A1D22]/65 max-w-lg mx-auto mb-8 leading-relaxed">
-          Tell us what you need. Our team will review your requirements and help identify
-          the right solution.
+        <p className="text-navy/65 max-w-lg mx-auto mb-8 leading-relaxed">
+          {solutions.cta.subtitle}
         </p>
         <a
           href="/request-solution"
-          className="inline-flex items-center gap-2 bg-[#C08A3E] hover:bg-[#a8752f] text-white font-semibold px-8 py-4 rounded-sm transition-colors"
+          className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze/80 text-white font-semibold px-8 py-4 rounded-sm transition-colors"
         >
-          Request a Solution <ArrowRight size={16} />
+          {solutions.cta.button} <ArrowRight size={16} />
         </a>
       </section>
-
-      <Footer />
     </div>
   );
 }

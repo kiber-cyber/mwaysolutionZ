@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 225" width="680" height="225">
+  <!-- MWAY Solutions — primary logo lockup -->
+  <!-- Palette: Corporate Navy #05101A, Burnished Bronze #6B563D, Paper White #F9F8F6 -->
+
+  <!-- Mark: double-frame registration mark + angular M glyph -->
+  <rect x="60" y="55" width="150" height="150" rx="8" fill="none" stroke="#05101A" stroke-width="2.5"/>
+  <rect x="70" y="65" width="130" height="130" rx="6" fill="none" stroke="#05101A" stroke-width="1" opacity="0.35"/>
+  <line x1="212" y1="50" x2="232" y2="50" stroke="#05101A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="222" y1="40" x2="222" y2="60" stroke="#05101A" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 95 175 L 95 90 L 135 140 L 175 90 L 175 175"
+        fill="none" stroke="#6B563D" stroke-width="9"
+        stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Wordmark -->
+  <text x="250" y="112" font-family="Arial, sans-serif" font-size="46" font-weight="700"
+        fill="#05101A" letter-spacing="1">MWAY</text>
+  <text x="253" y="140" font-family="Arial, sans-serif" font-size="18" font-weight="600"
+        fill="#05101A" letter-spacing="6">SOLUTIONS</text>
+  <text x="253" y="168" font-family="Arial, sans-serif" font-size="12" font-weight="400"
+        fill="#6B563D" letter-spacing="3">INTEGRATED SOLUTIONS</text>
+</svg>

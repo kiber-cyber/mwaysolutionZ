@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- MWAY Solutions — icon mark only, tuned for small-size legibility (favicon, app icon) -->
+  <rect x="0" y="0" width="200" height="200" rx="24" fill="#05101A"/>
+  <path d="M 50 150 L 50 55 L 100 105 L 150 55 L 150 150"
+        fill="none" stroke="#6B563D" stroke-width="16"
+        stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

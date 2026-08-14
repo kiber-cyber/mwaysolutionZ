@@ -1,7 +1,12 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getLocale } from "@/lib/i18n/server";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -15,13 +20,43 @@ export const metadata: Metadata = {
   description:
     "MWAY Solutions provides professional equipment, products, technical services and complete project solutions for businesses, institutions and organizations.",
   metadataBase: new URL("https://mwaysolutions.net"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-kit/mway-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-kit/mway-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/favicon-kit/apple-touch-icon.png",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MWAY Solutions",
+    "url": "https://mwaysolutions.net",
+    "logo": "https://mwaysolutions.net/mway-logo-full.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@mwaysolutions.net",
+      "contactType": "customer service"
+    }
+  };
+
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="afterInteractive"
+        />
+        <Navbar />
         {children}
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>
