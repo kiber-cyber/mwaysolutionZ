@@ -20,11 +20,10 @@ export default async function ContactPage() {
   const dict = dictionaries[locale];
 
   const email = "info@mwaysolutions.net";
-  const phone = "+995 599 139 966"; // update with your real number
-  const address = "Regus building. Vaja Phsavela 71, Tbilisi, Georgia"; // update with your actual address
+  const phone = "+995 555 555 555";
+  const address = "Tbilisi, Georgia";
 
   const mailtoLink = `mailto:${email}?subject=Inquiry%20from%20mwaysolutions.net&body=Hello%20MWAY%20Solutions%2C%0A%0A`;
-  // This pre‑fills the email body with a simple greeting; the user can type their message.
 
   return (
     <div className="min-h-screen bg-paper text-navy font-sans">
@@ -41,14 +40,12 @@ export default async function ContactPage() {
           </h1>
           <p className="text-white/65 leading-relaxed max-w-xl mx-auto">
             {dict.contact.page.intro.replace(/<[^>]*>/g, "")}
-            {/* Remove HTML tags from intro for plain text */}
           </p>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-6 lg:px-10 py-20">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Email */}
           <div className="bg-white p-8 rounded-sm shadow-sm border border-navy/10 text-center">
             <Mail className="mx-auto mb-4 text-bronze" size={36} strokeWidth={1.5} />
             <h3 className="font-display text-lg font-semibold mb-2">Email</h3>
@@ -58,12 +55,9 @@ export default async function ContactPage() {
             >
               {email}
             </a>
-            <p className="text-sm text-navy/50 mt-2">
-              Click to open your email client
-            </p>
+            <p className="text-sm text-navy/50 mt-2">Click to open your email client</p>
           </div>
 
-          {/* Phone */}
           <div className="bg-white p-8 rounded-sm shadow-sm border border-navy/10 text-center">
             <Phone className="mx-auto mb-4 text-bronze" size={36} strokeWidth={1.5} />
             <h3 className="font-display text-lg font-semibold mb-2">Phone</h3>
@@ -73,29 +67,15 @@ export default async function ContactPage() {
             >
               {phone}
             </a>
-            <p className="text-sm text-navy/50 mt-2">
-              Mon–Fri, 09:00 – 18:00
-            </p>
+            <p className="text-sm text-navy/50 mt-2">Mon–Fri, 09:00 – 18:00</p>
           </div>
 
-          {/* Address */}
           <div className="bg-white p-8 rounded-sm shadow-sm border border-navy/10 text-center">
             <MapPin className="mx-auto mb-4 text-bronze" size={36} strokeWidth={1.5} />
             <h3 className="font-display text-lg font-semibold mb-2">Address</h3>
             <p className="text-navy/70">{address}</p>
             <p className="text-sm text-navy/50 mt-2">Georgia</p>
           </div>
-        </div>
-
-        {/* Optional extra: a note about preferred contact method */}
-        <div className="mt-12 text-center text-navy/60 text-sm">
-          <p>
-            For project or procurement requests, please use our{" "}
-            <a href="/request-solution" className="text-bronze font-semibold hover:underline">
-              Request a Solution
-            </a>{" "}
-            page.
-          </p>
         </div>
       </section>
     </div>

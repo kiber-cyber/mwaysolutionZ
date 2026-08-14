@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { LOCALE_COOKIE, LOCALES, Locale } from "@/lib/i18n/config";
 
@@ -8,10 +8,7 @@ interface LanguageSwitcherProps {
 
 export function LanguageSwitcher({ currentLocale = "en" }: LanguageSwitcherProps) {
   const handleLanguageChange = (newLocale: Locale) => {
-    // Set the cookie directly in the browser
     document.cookie = `${LOCALE_COOKIE}=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
-
-    // Reload the page so Next.js server components re-read the cookie
     window.location.reload();
   };
 
@@ -26,8 +23,8 @@ export function LanguageSwitcher({ currentLocale = "en" }: LanguageSwitcherProps
             onClick={() => handleLanguageChange(locale)}
             className={`px-2.5 py-1 rounded-md text-xs font-semibold tracking-wider transition-colors ${
               isActive
-                ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800"
+                ? "bg-navy text-white"
+                : "text-navy/60 hover:text-navy hover:bg-navy/10"
             }`}
           >
             {locale.toUpperCase()}

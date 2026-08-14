@@ -1,8 +1,8 @@
-// components/Navbar.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { NAV } from "@/lib/nav";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,6 @@ function useLocale(): Locale {
       .split("; ")
       .find((row) => row.startsWith(`${LOCALE_COOKIE}=`));
     const value = cookie ? cookie.split("=")[1] : "en";
-    // Ensure it's a valid locale
     if (LOCALES.includes(value as Locale)) {
       setLocale(value as Locale);
     } else {
@@ -33,10 +32,19 @@ export default function Navbar() {
   const locale = useLocale();
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F6F5F1]/95 backdrop-blur border-b border-[#1A1D22]/10">
+    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-navy/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        <a href="/" className="font-display text-xl font-bold tracking-tight text-[#1A1D22]">
-          MWAY <span className="text-[#3E6B8A]">SOLUTIONS</span>
+        <a href="/" className="flex items-center gap-2">
+          <Image
+            src="/mway-mark.svg"
+            alt="MWAY Solutions"
+            width={32}
+            height={32}
+            className="h-8 w-auto"
+          />
+          <span className="font-display text-xl font-bold tracking-tight text-navy">
+            MWAY <span className="text-bronze">SOLUTIONS</span>
+          </span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -48,8 +56,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
                   isActive
-                    ? "text-[#0E1B2B] font-bold"
-                    : "text-[#1A1D22]/70 hover:text-[#0E1B2B]"
+                    ? "text-navy font-bold"
+                    : "text-navy/70 hover:text-navy"
                 }`}
               >
                 {item.label}
@@ -62,7 +70,7 @@ export default function Navbar() {
           <LanguageSwitcher currentLocale={locale} />
           <a
             href="/request-solution"
-            className="bg-[#C08A3E] hover:bg-[#a8752f] text-white text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors"
+            className="bg-bronze hover:bg-bronze/80 text-white text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors"
           >
             Request a Solution
           </a>
@@ -74,15 +82,15 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden border-t border-[#1A1D22]/10 bg-[#F6F5F1] px-6 py-4 flex flex-col gap-4">
+        <div className="lg:hidden border-t border-navy/10 bg-paper px-6 py-4 flex flex-col gap-4">
           {NAV.map((item) => (
-            <a key={item.label} href={item.href} className="text-sm font-medium text-[#1A1D22]">
+            <a key={item.label} href={item.href} className="text-sm font-medium text-navy">
               {item.label}
             </a>
           ))}
           <a
             href="/request-solution"
-            className="bg-[#C08A3E] text-white text-sm font-semibold px-5 py-3 rounded-sm text-center mt-2"
+            className="bg-bronze text-white text-sm font-semibold px-5 py-3 rounded-sm text-center mt-2"
           >
             Request a Solution
           </a>

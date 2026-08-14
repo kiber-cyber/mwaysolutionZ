@@ -107,7 +107,7 @@ export const dictionaries = {
         eyebrow: "CONTACT",
         heading: "Get in Touch",
         intro:
-          'Questions about a product, a project, or anything else — send us a message and we\'ll get back to you. For a specific project or procurement requirement, use <a href="/request-solution" class="text-[#C08A3E] font-semibold underline underline-offset-2">Request a Solution</a> instead — it captures the detail our team needs to respond properly.',
+          'Questions about a product, a project, or anything else — send us a message and we\'ll get back to you. For a specific project or procurement requirement, use Request a Solution instead — it captures the detail our team needs to respond properly.',
       },
       form: {
         name: "Name",
@@ -136,7 +136,6 @@ export const dictionaries = {
         { value: "other", label: "Other" },
       ],
     },
-    // ---------- NEW: about section (English) ----------
     about: {
       meta: {
         title: "About | MWAY Solutions",
@@ -188,6 +187,43 @@ We believe reliable business is built on trust, communication, professional stan
 Our objective is not simply to complete a single transaction. We aim to become a dependable partner that clients can return to whenever they need a product, service, supplier, contractor, or solution.
 
 One requirement. Multiple possibilities. One coordinated solution.`,
+      cta: {
+        title: "Have a Requirement?",
+        subtitle: "Tell us what you need. Our team will review your requirements and help identify the right solution.",
+        button: "Request a Solution",
+      },
+    },
+    products: {
+      meta: {
+        title: "Products | MWAY Solutions",
+        description: "Browse equipment and products available for commercial, institutional and project-based requirements.",
+      },
+      hero: {
+        eyebrow: "CATALOG",
+        heading: "Products",
+        intro: "Equipment and products for commercial, institutional and project-based requirements. This is a working catalog, not a shop — every item is available to request, not purchase online.",
+      },
+      categories: "Browse by Category",
+      selected: "Selected Products",
+      selectedIntro: "A curated showcase — not the full catalog. Tell us what you need and we'll confirm availability and specifications.",
+      cta: {
+        title: "Don't see what you need?",
+        subtitle: "Our catalog covers common equipment categories, but most projects need something more specific. Tell us the requirement directly.",
+        button: "Request a Solution",
+      },
+    },
+    solutions: {
+      meta: {
+        title: "Solutions | MWAY Solutions",
+        description: "Equipment supply, custom design, installation, procurement and maintenance solutions.",
+      },
+      hero: {
+        eyebrow: "SOLUTIONS",
+        heading: "Solutions That Move Projects Forward",
+        intro: "From equipment supply and procurement to installation, commissioning and ongoing technical support, we help organizations turn requirements into practical, reliable solutions.",
+      },
+      capabilities: "What We Do",
+      areas: "Solution Areas",
       cta: {
         title: "Have a Requirement?",
         subtitle: "Tell us what you need. Our team will review your requirements and help identify the right solution.",
@@ -298,7 +334,7 @@ One requirement. Multiple possibilities. One coordinated solution.`,
         eyebrow: "კონტაქტი",
         heading: "დაგვიკავშირდით",
         intro:
-          'გაქვთ შეკითხვა პროდუქტზე, პროექტზე ან სხვა საკითხზე? გამოგვიგზავნეთ შეტყობინება და ჩვენ მალე ვუპასუხებთ. კონკრეტული პროექტის ან შესყიდვის მოთხოვნისთვის გამოიყენეთ <a href="/request-solution" class="text-[#C08A3E] font-semibold underline underline-offset-2">მოთხოვნის გაგზავნა</a> – ის შეიცავს ყველა საჭირო დეტალს, რომ ჩვენმა გუნდმა სწორად უპასუხოს.',
+          'გაქვთ შეკითხვა პროდუქტზე, პროექტზე ან სხვა საკითხზე? გამოგვიგზავნეთ შეტყობინება და ჩვენ მალე ვუპასუხებთ. კონკრეტული პროექტის ან შესყიდვის მოთხოვნისთვის გამოიყენეთ მოთხოვნის გაგზავნა – ის შეიცავს ყველა საჭირო დეტალს, რომ ჩვენმა გუნდმა სწორად უპასუხოს.',
       },
       form: {
         name: "სახელი",
@@ -327,7 +363,6 @@ One requirement. Multiple possibilities. One coordinated solution.`,
         { value: "other", label: "სხვა" },
       ],
     },
-    // ---------- NEW: about section (Georgian) ----------
     about: {
       meta: {
         title: "ჩვენს შესახებ | MWAY Solutions",
@@ -381,6 +416,43 @@ One requirement. Multiple possibilities. One coordinated solution.`,
 გვინდა ვიყოთ პარტნიორი, რომელსაც კლიენტი მიმართავს მაშინ, როდესაც მას სჭირდება პროდუქტი, მომსახურება, მომწოდებელი, კონტრაქტორი ან პრაქტიკული გადაწყვეტა.
 
 ერთი მოთხოვნა. მრავალი შესაძლებლობა. ერთი კოორდინირებული გადაწყვეტა.`,
+      cta: {
+        title: "გაქვთ მოთხოვნა?",
+        subtitle: "გვითხარით რა გჭირდებათ. ჩვენი გუნდი განიხილავს მოთხოვნას და დაგიკავშირდებათ.",
+        button: "მოთხოვნის გაგზავნა",
+      },
+    },
+    products: {
+      meta: {
+        title: "პროდუქტები | MWAY Solutions",
+        description: "აღჭურვილობა და პროდუქტები კომერციული, ინსტიტუციური და პროექტზე დაფუძნებული მოთხოვნებისთვის.",
+      },
+      hero: {
+        eyebrow: "კატალოგი",
+        heading: "პროდუქტები",
+        intro: "აღჭურვილობა და პროდუქტები კომერციული, ინსტიტუციური და პროექტზე დაფუძნებული მოთხოვნებისთვის. ეს არის სამუშაო კატალოგი, არა მაღაზია — ყველა პროდუქტის მოთხოვნა შესაძლებელია, ონლაინ შეძენა კი არა.",
+      },
+      categories: "კატეგორიები",
+      selected: "შერჩეული პროდუქტები",
+      selectedIntro: "შერჩეული მიმოხილვა — არა სრული კატალოგი. გვითხარით რა გჭირდებათ და ჩვენ დავადასტურებთ ხელმისაწვდომობასა და სპეციფიკაციებს.",
+      cta: {
+        title: "ვერ ხედავთ რას ეძებთ?",
+        subtitle: "ჩვენი კატალოგი მოიცავს ჩვეულებრივ აღჭურვილობის კატეგორიებს, მაგრამ უმეტეს პროექტს რაღაც უფრო სპეციფიკური სჭირდება. გვითხარით მოთხოვნა პირდაპირ.",
+        button: "მოთხოვნის გაგზავნა",
+      },
+    },
+    solutions: {
+      meta: {
+        title: "გადაწყვეტილებები | MWAY Solutions",
+        description: "აღჭურვილობის მიწოდება, ინდივიდუალური დიზაინი, ინსტალაცია, შესყიდვები და ტექნიკური მომსახურება.",
+      },
+      hero: {
+        eyebrow: "გადაწყვეტილებები",
+        heading: "გადაწყვეტილებები, რომლებიც პროექტებს აწინაურებენ",
+        intro: "აღჭურვილობის მიწოდებიდან და შესყიდვებიდან დაწყებული, ინსტალაციის, კომისირებისა და მიმდინარე ტექნიკური მხარდაჭერის ჩათვლით — ვეხმარებით ორგანიზაციებს, მოთხოვნები პრაქტიკულ, საიმედო გადაწყვეტილებებად აქციონ.",
+      },
+      capabilities: "რას ვაკეთებთ",
+      areas: "გადაწყვეტილებების სფეროები",
       cta: {
         title: "გაქვთ მოთხოვნა?",
         subtitle: "გვითხარით რა გჭირდებათ. ჩვენი გუნდი განიხილავს მოთხოვნას და დაგიკავშირდებათ.",

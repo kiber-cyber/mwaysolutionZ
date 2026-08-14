@@ -27,12 +27,11 @@ export default async function RequestSolutionPage() {
 
   const email = "info@mwaysolutions.net";
 
-  // Template for the email body
   const emailTemplate = `Subject: Request for Solution – [Your Company Name]
 
-Hello MWAY Solutions team,
+Dear MWAY Solutions team,
 
-I would like to request a solution for the following requirement:
+I would like to request a solution for the following:
 
 Company / Organization: 
 Contact Person: 
@@ -41,30 +40,21 @@ Phone:
 Country / City: 
 Organization Type: 
 
-Project / Requirement Description: 
+Project / Requirement: 
 Products or Services of Interest: 
-Estimated Quantity: 
-Required Delivery Location: 
-Required Delivery Date: 
-Budget Range (optional): 
+Quantity: 
+Delivery Location: 
+Delivery Date: 
+Budget Range: 
 
 Additional Information: 
 
 Please let me know if you need any further details.
 
 Best regards,
-[Your Name]
-[Your Title]
-[Your Phone Number]`;
+[Your Name]`;
 
   const mailtoLink = `mailto:${email}?subject=Request%20for%20Solution&body=${encodeURIComponent(emailTemplate)}`;
-
-  // For copying the template to clipboard
-  const copyTemplate = () => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(emailTemplate);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-paper text-navy font-sans">
@@ -92,8 +82,8 @@ Best regards,
             <h2 className="font-display text-xl font-semibold">Send us an email</h2>
           </div>
           <p className="text-navy/70 mb-6">
-            Use the button below to open your email client with a pre‑filled template.
-            Fill in the details and send – you can attach files directly in your email.
+            Use the button below to open your email client with a template.
+            Fill in the details, attach any files, and send it to us.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -106,7 +96,7 @@ Best regards,
             </a>
 
             <button
-              onClick={copyTemplate}
+              onClick={() => navigator.clipboard?.writeText(emailTemplate)}
               className="inline-flex items-center gap-2 border border-navy/20 hover:border-navy/40 text-navy font-medium px-6 py-3 rounded-sm transition-colors"
             >
               <Copy size={18} />
